@@ -197,7 +197,7 @@ pub fn System(comptime n: usize) type {
                             .add(k2_derivative.scale_by(2.0 / 6.0))
                             .add(k3_derivative.scale_by(1.0 / 6.0));
 
-                        self._epoch.body_states[idx] = last_epoch.body_states[idx]; // Reset the 2th iteration mutations
+                        self._epoch.body_states[idx] = last_epoch.body_states[idx]; // Reset the 2nd iteration mutations
                         self._epoch.body_states[idx].apply_derivative_in_place(rk_derivative, dt);
                     }
 
