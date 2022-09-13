@@ -160,6 +160,8 @@ pub fn System(comptime n: usize) type {
                         const accel = self.compute_gravitational_acceleration(idx);
                         const derivative = self._epoch.body_states[idx].get_derivative(accel);
                         self._epoch.body_states[idx].apply_derivative_in_place(derivative, dt);
+
+                        self._epoch.index += 1;
                     }
                 },
                 .IsolatedRK4 => {
